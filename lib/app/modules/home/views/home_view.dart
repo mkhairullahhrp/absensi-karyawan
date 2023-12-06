@@ -1,6 +1,3 @@
-// import 'dart:ffi';
-
-import 'dart:ffi';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:convex_bottom_bar/convex_bottom_bar.dart';
@@ -69,7 +66,13 @@ class HomeView extends GetView<HomeController> {
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      Text("Belum ada lokasi."),
+                      Container(
+                      width: 200, 
+                      child: Text(
+                        user["address"] != null ? "${user['address']}" : "Belum ada lokasi.",
+                          textAlign: TextAlign.left,
+                        ),
+                      ),
                     ],
                   )
                 ],
