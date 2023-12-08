@@ -31,6 +31,7 @@ class PageIndexController extends GetxController {
           await updatePosition(position, address);
 
           //cek distance between 2 position
+          // posisi UNIMED gedung jurusan
           double distance = Geolocator.distanceBetween(3.6100597,98.713148, position.latitude, position.longitude);
 
           //presensi
@@ -66,7 +67,8 @@ class PageIndexController extends GetxController {
 
     //default di luar area
     String status = "Di luar area";
-
+    
+    //area unimed
     if (distance <= 30) {
       // didalam area // per meter
       status = "Di dalam area";
