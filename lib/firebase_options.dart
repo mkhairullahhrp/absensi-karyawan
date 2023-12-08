@@ -48,9 +48,9 @@ class DefaultFirebaseOptions {
         );
     }
   }
-
+  // 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA3F7KI58FPjmBSJ-kf_nvFMyK7hfaYPnc',
+    apiKey: 'AIzaSyCEjU7_R8Ee7NYUgU7Bph94YAKNKstpLY8',
     appId: '1:1054180263258:android:617664c1041330dc4e5f63',
     messagingSenderId: '1054180263258',
     projectId: 'presence-f98e0',

@@ -214,7 +214,9 @@ class HomeView extends GetView<HomeController> {
                           borderRadius: BorderRadius.circular(20),
                           child: InkWell(
                             borderRadius: BorderRadius.circular(20),
-                            onTap: () => Get.toNamed(Routes.DETAIL_PRESENSI), 
+                            onTap: () => Get.toNamed(
+                            Routes.DETAIL_PRESENSI, 
+                            arguments: data), 
                               child: Container(
                               padding: EdgeInsets.all(20),
                               decoration: BoxDecoration(

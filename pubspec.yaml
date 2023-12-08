@@ -18,11 +18,19 @@ dependencies:
   geolocator: 10.1.0
   geocoding: 2.1.1
   google_fonts: 6.1.0
+  syncfusion_flutter_datepicker: 23.1.39
   flutter: 
     sdk: flutter
 
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/Precence-Logo.png"
+  min_sdk_android: 21
+
 dev_dependencies: 
   flutter_lints: 3.0.1
+  flutter_launcher_icons: "^0.13.1"
   flutter_test: 
     sdk: flutter
 

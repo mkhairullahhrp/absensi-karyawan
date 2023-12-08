@@ -74,12 +74,12 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DETAIL_PRESENSI,
-      page: () => const DetailPresensiView(),
+      page: () => DetailPresensiView(),
       binding: DetailPresensiBinding(),
     ),
     GetPage(
       name: _Paths.ALL_PRESENSI,
-      page: () => const AllPresensiView(),
+      page: () => AllPresensiView(),
       binding: AllPresensiBinding(),
     ),
   ];
