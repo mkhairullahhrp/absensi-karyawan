@@ -10,6 +10,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(0xff3D9970),
           title: const Text('FORGOT PASSWORD'),
           centerTitle: true,
         ),
@@ -20,6 +21,8 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
             decoration: InputDecoration(
               labelText: "Email",
               border: OutlineInputBorder(),
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(
@@ -32,6 +35,7 @@ class ForgotPasswordView extends GetView<ForgotPasswordController> {
                     controller.sendEmail();
                   }
                 },
+                style: ElevatedButton.styleFrom(backgroundColor: Color(0xff3D9970), shape: StadiumBorder()),
                 child: Text(controller.isLoading.isFalse ? "SEND RESET PASSWORD" : "LOADING..."),
             )
           ),
