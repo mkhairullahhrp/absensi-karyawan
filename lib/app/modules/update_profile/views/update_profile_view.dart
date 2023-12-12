@@ -19,6 +19,7 @@ class UpdateProfileView extends GetView<UpdateProfileController> {
     print(user);
     return Scaffold (
       appBar: AppBar(
+        backgroundColor: Color(0xff3D9970),
         title: Text('UPDATE PROFILE'),
         centerTitle: true,
       ),
@@ -29,7 +30,9 @@ class UpdateProfileView extends GetView<UpdateProfileController> {
             controller: controller.nipC,
             decoration: InputDecoration(
               labelText: "NIP",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 20),
@@ -37,7 +40,9 @@ class UpdateProfileView extends GetView<UpdateProfileController> {
             controller: controller.nameC,
             decoration: InputDecoration(
               labelText: "Nama",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 20),
@@ -45,7 +50,9 @@ class UpdateProfileView extends GetView<UpdateProfileController> {
             controller: controller.emailC,
             decoration: InputDecoration(
               labelText: "Email",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 25,),
@@ -90,7 +97,7 @@ class UpdateProfileView extends GetView<UpdateProfileController> {
                             onPressed: (){
                               controller.deleteProfile(user["uid"]);
                             }, 
-                            child: Text("delete")
+                            child: Text("delete", style: TextStyle(color: Color(0xff3D9970)))
                           )
                         ],
                       );
@@ -104,13 +111,14 @@ class UpdateProfileView extends GetView<UpdateProfileController> {
                 onPressed: (){
                   controller.pickImage();
                 }, 
-                child: Text("Choose")
+                child: Text("Choose", style: TextStyle(color: Color(0xff3D9970)),)
               )
             ],
           ),
           SizedBox(height: 30),
           Obx(() => 
             ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xff3D9970), shape: StadiumBorder()),
               onPressed: () async{
                 if (controller.isLoading.isFalse) {
                     await controller.updateProfile(user["uid"]);

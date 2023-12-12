@@ -15,6 +15,7 @@ class ProfileView extends GetView<ProfileController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff3D9970),
         title: const Text('PROFILE'),
         centerTitle: true,
       ),
@@ -103,10 +104,11 @@ class ProfileView extends GetView<ProfileController> {
         }
       ),
       bottomNavigationBar: ConvexAppBar(
-        style: TabStyle.fixedCircle,
+        style: TabStyle.reactCircle,
+        backgroundColor: Color(0xff3D9970),
         items: [
           TabItem(icon: Icons.home, title: 'Home'),
-          TabItem(icon: Icons.fingerprint, title: 'Add'),
+          TabItem(icon: Icons.check_sharp, title: 'Attend'),
           TabItem(icon: Icons.person, title: 'Profile'),
         ],
         initialActiveIndex: pageC.pageIndex.value,

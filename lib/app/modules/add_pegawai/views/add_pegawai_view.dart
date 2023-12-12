@@ -11,6 +11,7 @@ class AddPegawaiView extends GetView<AddPegawaiController> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Tambah Pegawai'),
+         backgroundColor: Color(0xff3D9970),
         centerTitle: true,
       ),
       body: ListView(
@@ -20,7 +21,9 @@ class AddPegawaiView extends GetView<AddPegawaiController> {
             controller: controller.nipC,
             decoration: InputDecoration(
               labelText: "NIP",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 20),
@@ -28,7 +31,9 @@ class AddPegawaiView extends GetView<AddPegawaiController> {
             controller: controller.nameC,
             decoration: InputDecoration(
               labelText: "Nama",
+             labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 20),
@@ -36,7 +41,9 @@ class AddPegawaiView extends GetView<AddPegawaiController> {
             controller: controller.jobC,
             decoration: InputDecoration(
               labelText: "Job",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 20),
@@ -44,12 +51,15 @@ class AddPegawaiView extends GetView<AddPegawaiController> {
             controller: controller.emailC,
             decoration: InputDecoration(
               labelText: "Email",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 30),
           Obx(() => 
             ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xff3D9970), shape: StadiumBorder()),
               onPressed: () async{
                 if (controller.isLoading.isFalse) {
                     await controller.addPegawai();

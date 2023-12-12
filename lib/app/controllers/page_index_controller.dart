@@ -69,7 +69,7 @@ class PageIndexController extends GetxController {
     String status = "Di luar area";
     
     //area unimed
-    if (distance <= 30) {
+    if (distance <= 50) {
       // didalam area // per meter
       status = "Di dalam area";
     }
@@ -83,6 +83,7 @@ class PageIndexController extends GetxController {
         actions: [
           OutlinedButton(
             onPressed: () => Get.back(), 
+
             child: Text("CANCEL"),
           ),
           ElevatedButton(
@@ -101,7 +102,7 @@ class PageIndexController extends GetxController {
             Get.back();
             Get.snackbar("Berhasil", "Kamu telah mengisi daftar hadir (MASUK).");
             }, 
-            child: Text("YES"),
+              child: Text("YES"),
           ),
         ],
       );
@@ -118,16 +119,20 @@ class PageIndexController extends GetxController {
           // sudah absen masuk dan keluar
           Get.snackbar("PERHATIAN", "Kamu telah absen masuk & keluar, absen lagi besok.");
         }else {
+
           // absen keluar
           await Get.defaultDialog(
         title: "Validasi Presensi",
         middleText: "Apakah kamu yakin akan mengisi daftar hadir (KELUAR) sekarang?",
+
         actions: [
           OutlinedButton(
             onPressed: () => Get.back(), 
-            child: Text("CANCEL"),
+            child: Text("CANCEL", style: TextStyle(color: Color(0xff3D9970))),
+            
           ),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xff3D9970)),
             onPressed: () async{
                await colPresence.doc(todayDocID).update({
                 "date": now.toIso8601String(),
@@ -157,9 +162,11 @@ class PageIndexController extends GetxController {
         actions: [
           OutlinedButton(
             onPressed: () => Get.back(), 
-            child: Text("CANCEL"),
+            child: 
+            Text("CANCEL", style: TextStyle(color: Color(0xff3D9970)),),
           ),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xff3D9970)),
             onPressed: () async{
               await colPresence.doc(todayDocID).set({
               "date": now.toIso8601String(),

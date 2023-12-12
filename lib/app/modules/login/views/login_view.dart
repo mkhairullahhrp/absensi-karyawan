@@ -11,6 +11,7 @@ class LoginView extends GetView<LoginController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff3D9970),
         title: const Text('LOGIN'),
         centerTitle: true,
       ),
@@ -22,7 +23,9 @@ class LoginView extends GetView<LoginController> {
             controller: controller.emailC,
             decoration: InputDecoration(
               labelText: "Email",
+              labelStyle: TextStyle(color: Color(0xff3D9970)) ,
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 20,),
@@ -31,12 +34,15 @@ class LoginView extends GetView<LoginController> {
             obscureText: true,
             decoration: InputDecoration(
               labelText: "Password",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
         SizedBox(height: 20,),
          Obx(
           () =>  ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: Color(0xff3D9970), shape: StadiumBorder()),
               onPressed: () async {
                 if (controller.isLoading.isFalse) {
                   await controller.login(); 
@@ -47,7 +53,7 @@ class LoginView extends GetView<LoginController> {
           ),
           TextButton(
             onPressed: () => Get.toNamed(Routes.FORGOT_PASSWORD), 
-            child: Text("Lupa Password?")
+            child: Text("Lupa Password?", style: TextStyle(color: Color(0xff3D9970)),)
           ),
         ],
       )

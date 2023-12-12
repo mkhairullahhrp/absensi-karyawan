@@ -11,6 +11,7 @@ class NewPasswordView extends GetView<NewPasswordController> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('NEW PASSWORD'),
+        backgroundColor: Color(0xff3D9970),
         centerTitle: true,
       ),
       body: ListView(
@@ -22,11 +23,14 @@ class NewPasswordView extends GetView<NewPasswordController> {
             controller: controller.newPassC,
             decoration: InputDecoration(
               labelText: "New Password",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 20),
           ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xff3D9970), shape: StadiumBorder()),
             onPressed: (){
               controller.newPassword();
             }, 

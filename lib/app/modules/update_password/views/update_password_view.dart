@@ -10,6 +10,7 @@ class UpdatePasswordView extends GetView<UpdatePasswordController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xff3D9970),
         title: const Text('UPDATE PASSWORD'),
         centerTitle: true,
       ),
@@ -22,7 +23,9 @@ class UpdatePasswordView extends GetView<UpdatePasswordController> {
             obscureText: true,
             decoration: InputDecoration(
               labelText: "Current Password",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 10,),
@@ -32,7 +35,9 @@ class UpdatePasswordView extends GetView<UpdatePasswordController> {
             obscureText: true,
             decoration: InputDecoration(
               labelText: "New Password",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 10,),
@@ -42,12 +47,15 @@ class UpdatePasswordView extends GetView<UpdatePasswordController> {
             obscureText: true,
             decoration: InputDecoration(
               labelText: "Confirm New Password",
+              labelStyle: TextStyle(color: Color(0xff3D9970)),
               border: OutlineInputBorder(),
+              focusedBorder: OutlineInputBorder(borderSide: BorderSide(color: Color(0xff3D9970))),
             ),
           ),
           SizedBox(height: 10,),
           Obx(() => 
             ElevatedButton(
+            style: ElevatedButton.styleFrom(backgroundColor: Color(0xff3D9970), shape: StadiumBorder()),
               onPressed: (){
                 if (controller.isLoading.isFalse) {
                   controller.updatePass();

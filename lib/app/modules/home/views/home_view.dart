@@ -18,6 +18,7 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       appBar: AppBar(
         title: Text('HOME'),
+        backgroundColor: Color(0xff3D9970),
         centerTitle: true,
         // actions: [
         //   IconButton(
@@ -181,7 +182,8 @@ class HomeView extends GetView<HomeController> {
                     onPressed: (){
                       Get.toNamed(Routes.ALL_PRESENSI);
                     }, 
-                    child: Text("See more"))
+                    child: 
+                    Text("See more", style: TextStyle(color: Color(0xff3D9970)),))
                 ],
               ),
               SizedBox(height: 10,),
@@ -268,10 +270,11 @@ class HomeView extends GetView<HomeController> {
         }
       ),
       bottomNavigationBar: ConvexAppBar(
-        style: TabStyle.fixedCircle,
+        backgroundColor: Color(0xff3D9970),
+        style: TabStyle.reactCircle,
         items: [
           TabItem(icon: Icons.home, title: 'Home'),
-          TabItem(icon: Icons.fingerprint, title: 'Add'),
+          TabItem(icon: Icons.check_sharp, title: 'Attend'),
           TabItem(icon: Icons.person, title: 'Profile'),
         ],
         initialActiveIndex: pageC.pageIndex.value,
